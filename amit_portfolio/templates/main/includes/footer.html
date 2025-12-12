@@ -1,0 +1,33 @@
+{% load static %}
+
+<!-- Footer -->
+<footer class="footer bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="mb-0">
+                    &copy; {% now "Y" %} {{ profile.name|default:"Amit" }}. All rights reserved.
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="social-links">
+                    {% if profile.github_url %}
+                    <a href="{{ profile.github_url }}" target="_blank" class="text-white me-3">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    {% endif %}
+                    {% if profile.linkedin_url %}
+                    <a href="{{ profile.linkedin_url }}" target="_blank" class="text-white me-3">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    {% endif %}
+                    {% if profile.email %}
+                    <a href="mailto:{{ profile.email }}" class="text-white me-3">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
